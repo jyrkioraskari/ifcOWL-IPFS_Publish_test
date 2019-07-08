@@ -1,0 +1,15 @@
+org\lbd\rdf\CanonizedPattern.class
+org\lbd\Splitted_IfcOWL.class
+org\rdfcontext\signing\RDFC14Ner$C14NTtriple.class
+org\rdfcontext\signing\RDFC14Ner.class
+fi\aalto\lbd\lib\AaltoIPFSConnection.class
+fi\aalto\lbd\lib\IPFSDaemonThread.class
+org\IPFS_Fetch.class
+org\lbd\ifc\RootEntity.class
+guidcompressor\GuidCompressor.class
+fi\aalto\lbd\lib\AaltoIPFSConnection$1.class
+org\lbd\GraphMaker.class
+org\lbd\Splitted_NoGeometryIfcOWL.class
+fi\aalto\lbd\lib\AaltoIPFSConnection$Bytes.class
+guidcompressor\Guid.class
+org\lbd\Splitted_NoGeometryIfcOWLMeasure.class

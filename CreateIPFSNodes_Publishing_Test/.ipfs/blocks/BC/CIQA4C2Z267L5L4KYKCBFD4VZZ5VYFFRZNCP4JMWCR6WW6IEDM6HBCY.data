@@ -1,0 +1,43 @@
+
+Ñ É _:g000001 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcGloballyUniqueId> .
+_:g000001 <https://w3id.org/express#hasString> "0WwdTIUhL1WR0HhBz4NDaX" .
+_:g000002 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcLabel> .
+_:g000002 <https://w3id.org/express#hasString> "Default Site" .
+_:g000005 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcCompoundPlaneAngleMeasure> .
+_:g000005 <https://w3id.org/list#hasContents> _:g000012 .
+_:g000005 <https://w3id.org/list#hasNext> _:g000007 .
+_:g000006 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcCompoundPlaneAngleMeasure> .
+_:g000006 <https://w3id.org/list#hasContents> _:g000015 .
+_:g000006 <https://w3id.org/list#hasNext> _:g000008 .
+_:g000007 <http://www-uk.hpl.hp.com/people/jjc/rdf/c14n#true> "1" .
+_:g000007 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcCompoundPlaneAngleMeasure> .
+_:g000007 <https://w3id.org/list#hasContents> _:g000014 .
+_:g000007 <https://w3id.org/list#hasNext> _:g000009 .
+_:g000008 <http://www-uk.hpl.hp.com/people/jjc/rdf/c14n#true> "2" .
+_:g000008 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcCompoundPlaneAngleMeasure> .
+_:g000008 <https://w3id.org/list#hasContents> _:g000013 .
+_:g000008 <https://w3id.org/list#hasNext> _:g000010 .
+_:g000009 <http://www-uk.hpl.hp.com/people/jjc/rdf/c14n#true> "3" .
+_:g000009 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcCompoundPlaneAngleMeasure> .
+_:g000009 <https://w3id.org/list#hasContents> _:g000011 .
+_:g000010 <http://www-uk.hpl.hp.com/people/jjc/rdf/c14n#true> "4" .
+_:g000010 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcCompoundPlaneAngleMeasure> .
+_:g000010 <https://w3id.org/list#hasContents> _:g000011 .
+_:g000011 <http://www-uk.hpl.hp.com/people/jjc/rdf/c14n#true> "5" .
+_:g000012 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/express#INTEGER> .
+_:g000012 <https://w3id.org/express#hasInteger> "24^^http://www.w3.org/2001/XMLSchema#integer" .
+_:g000013 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/express#INTEGER> .
+_:g000013 <https://w3id.org/express#hasInteger> "25^^http://www.w3.org/2001/XMLSchema#integer" .
+_:g000014 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/express#INTEGER> .
+_:g000014 <https://w3id.org/express#hasInteger> "28^^http://www.w3.org/2001/XMLSchema#integer" .
+_:g000015 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/express#INTEGER> .
+_:g000015 <https://w3id.org/express#hasInteger> "54^^http://www.w3.org/2001/XMLSchema#integer" .
+<http://ipfs/bim/0WwdTIUhL1WR0HhBz4NDaX> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#compositionType_IfcSpatialStructureElement> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#ELEMENT> .
+<http://ipfs/bim/0WwdTIUhL1WR0HhBz4NDaX> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#globalId_IfcRoot> _:g000001 .
+<http://ipfs/bim/0WwdTIUhL1WR0HhBz4NDaX> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#name_IfcRoot> _:g000002 .
+<http://ipfs/bim/0WwdTIUhL1WR0HhBz4NDaX> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#objectPlacement_IfcProduct> _:g000003 .
+<http://ipfs/bim/0WwdTIUhL1WR0HhBz4NDaX> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#ownerHistory_IfcRoot> _:g000004 .
+<http://ipfs/bim/0WwdTIUhL1WR0HhBz4NDaX> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#refLatitude_IfcSite> _:g000005 .
+<http://ipfs/bim/0WwdTIUhL1WR0HhBz4NDaX> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#refLongitude_IfcSite> _:g000006 .
+<http://ipfs/bim/0WwdTIUhL1WR0HhBz4NDaX> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcSite> .
+É 

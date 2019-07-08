@@ -1,0 +1,20 @@
+
+…ý_:g000001 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcGloballyUniqueId> .
+_:g000001 <https://w3id.org/express#hasString> "0O7m14_rjEmfwIar6iUnxW" .
+<http://ipfs/bim/0O7m14_rjEmfwIar6iUnxW> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#globalId_IfcRoot> _:g000001 .
+<http://ipfs/bim/0O7m14_rjEmfwIar6iUnxW> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#ownerHistory_IfcRoot> _:g000002 .
+<http://ipfs/bim/0O7m14_rjEmfwIar6iUnxW> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#relatedElements_IfcRelContainedInSpatialStructure> <http://ipfs/bim/0NpqiK%24Nr1Uer1k_ZYtztc> .
+<http://ipfs/bim/0O7m14_rjEmfwIar6iUnxW> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#relatedElements_IfcRelContainedInSpatialStructure> <http://ipfs/bim/1032soLJnEROBe5TIIXQY0> .
+<http://ipfs/bim/0O7m14_rjEmfwIar6iUnxW> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#relatedElements_IfcRelContainedInSpatialStructure> <http://ipfs/bim/1B%24imXsor9ux_C_CKnjqHj> .
+<http://ipfs/bim/0O7m14_rjEmfwIar6iUnxW> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#relatedElements_IfcRelContainedInSpatialStructure> <http://ipfs/bim/1NCVhm3e17DQUYskR9NgOS> .
+<http://ipfs/bim/0O7m14_rjEmfwIar6iUnxW> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#relatedElements_IfcRelContainedInSpatialStructure> <http://ipfs/bim/2PQxLGVfj5ZeuNt61j1Evp> .
+<http://ipfs/bim/0O7m14_rjEmfwIar6iUnxW> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#relatedElements_IfcRelContainedInSpatialStructure> <http://ipfs/bim/2Qswx5x2PBIPeaw2YURc2e> .
+<http://ipfs/bim/0O7m14_rjEmfwIar6iUnxW> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#relatedElements_IfcRelContainedInSpatialStructure> <http://ipfs/bim/2UpQQsKUTEFB11O1ms5AMa> .
+<http://ipfs/bim/0O7m14_rjEmfwIar6iUnxW> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#relatedElements_IfcRelContainedInSpatialStructure> <http://ipfs/bim/3RiQcc4gr5rOiSLzXChA0E> .
+<http://ipfs/bim/0O7m14_rjEmfwIar6iUnxW> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#relatedElements_IfcRelContainedInSpatialStructure> <http://ipfs/bim/3WB1JIaL1DzR1zueCiZzx2> .
+<http://ipfs/bim/0O7m14_rjEmfwIar6iUnxW> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#relatedElements_IfcRelContainedInSpatialStructure> <http://ipfs/bim/3ksWppEOj52wvV4huTiXsu> .
+<http://ipfs/bim/0O7m14_rjEmfwIar6iUnxW> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#relatedElements_IfcRelContainedInSpatialStructure> <http://ipfs/bim/3tl3WYLCTBNejZ4reyM_Sd> .
+<http://ipfs/bim/0O7m14_rjEmfwIar6iUnxW> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#relatedElements_IfcRelContainedInSpatialStructure> <http://ipfs/bim/3ykUWRBGb1VO9oLC7kB92p> .
+<http://ipfs/bim/0O7m14_rjEmfwIar6iUnxW> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#relatingStructure_IfcRelContainedInSpatialStructure> <http://ipfs/bim/3s8d1s7wDBIu_BA%246pnJj6> .
+<http://ipfs/bim/0O7m14_rjEmfwIar6iUnxW> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcRelContainedInSpatialStructure> .
+ý

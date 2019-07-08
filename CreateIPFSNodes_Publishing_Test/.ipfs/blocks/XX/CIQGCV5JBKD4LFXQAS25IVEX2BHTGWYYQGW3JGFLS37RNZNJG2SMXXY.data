@@ -1,0 +1,36 @@
+
+¶#®#_:g000001 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcText> .
+_:g000001 <https://w3id.org/express#hasString> "Automatically generated project" .
+_:g000002 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcGloballyUniqueId> .
+_:g000002 <https://w3id.org/express#hasString> "0PT_Q094H9v8b_eikESoe8" .
+_:g000003 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcLabel> .
+_:g000003 <https://w3id.org/express#hasString> "DefaultProject" .
+_:g000006 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#units_IfcUnitAssignment> _:g000007 .
+_:g000006 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#units_IfcUnitAssignment> _:g000008 .
+_:g000006 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#units_IfcUnitAssignment> _:g000009 .
+_:g000006 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#units_IfcUnitAssignment> _:g000010 .
+_:g000006 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#units_IfcUnitAssignment> _:g000011 .
+_:g000006 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcUnitAssignment> .
+_:g000007 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#name_IfcSIUnit> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#CUBIC_METRE> .
+_:g000007 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#unitType_IfcNamedUnit> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#VOLUMEUNIT> .
+_:g000007 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcSIUnit> .
+_:g000008 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#name_IfcSIUnit> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#GRAM> .
+_:g000008 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#unitType_IfcNamedUnit> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#MASSUNIT> .
+_:g000008 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcSIUnit> .
+_:g000009 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#name_IfcSIUnit> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#METRE> .
+_:g000009 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#unitType_IfcNamedUnit> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#LENGTHUNIT> .
+_:g000009 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcSIUnit> .
+_:g000010 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#name_IfcSIUnit> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#SECOND> .
+_:g000010 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#unitType_IfcNamedUnit> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#TIMEUNIT> .
+_:g000010 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcSIUnit> .
+_:g000011 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#name_IfcSIUnit> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#SQUARE_METRE> .
+_:g000011 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#unitType_IfcNamedUnit> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#AREAUNIT> .
+_:g000011 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcSIUnit> .
+<http://ipfs/bim/0PT_Q094H9v8b_eikESoe8> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#description_IfcRoot> _:g000001 .
+<http://ipfs/bim/0PT_Q094H9v8b_eikESoe8> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#globalId_IfcRoot> _:g000002 .
+<http://ipfs/bim/0PT_Q094H9v8b_eikESoe8> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#name_IfcRoot> _:g000003 .
+<http://ipfs/bim/0PT_Q094H9v8b_eikESoe8> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#ownerHistory_IfcRoot> _:g000004 .
+<http://ipfs/bim/0PT_Q094H9v8b_eikESoe8> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#representationContexts_IfcProject> _:g000005 .
+<http://ipfs/bim/0PT_Q094H9v8b_eikESoe8> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#unitsInContext_IfcProject> _:g000006 .
+<http://ipfs/bim/0PT_Q094H9v8b_eikESoe8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcProject> .
+®#

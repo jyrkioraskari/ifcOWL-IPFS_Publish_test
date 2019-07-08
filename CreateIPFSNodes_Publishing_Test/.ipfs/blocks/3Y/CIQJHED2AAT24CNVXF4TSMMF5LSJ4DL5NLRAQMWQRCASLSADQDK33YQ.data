@@ -1,0 +1,37 @@
+
+ª¢_:g000001 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcGloballyUniqueId> .
+_:g000001 <https://w3id.org/express#hasString> "0KksVM8Nr9AhD1xEru1MM2" .
+_:g000003 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#directionSense_IfcMaterialLayerSetUsage> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#POSITIVE> .
+_:g000003 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#forLayerSet_IfcMaterialLayerSetUsage> _:g000004 .
+_:g000003 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#layerSetDirection_IfcMaterialLayerSetUsage> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#AXIS2> .
+_:g000003 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#offsetFromReferenceLine_IfcMaterialLayerSetUsage> _:g000007 .
+_:g000003 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcMaterialLayerSetUsage> .
+_:g000004 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#layerSetName_IfcMaterialLayerSet> _:g000005 .
+_:g000004 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#materialLayers_IfcMaterialLayerSet> _:g000006 .
+_:g000004 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcMaterialLayerSet> .
+_:g000006 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcMaterialLayer_List> .
+_:g000006 <https://w3id.org/list#hasContents> _:g000008 .
+_:g000006 <https://w3id.org/list#hasNext> _:g000015 .
+_:g000008 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#isVentilated_IfcMaterialLayer> _:g000010 .
+_:g000008 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#layerThickness_IfcMaterialLayer> _:g000011 .
+_:g000008 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#material_IfcMaterialLayer> _:g000013 .
+_:g000008 <http://www-uk.hpl.hp.com/people/jjc/rdf/c14n#true> "1" .
+_:g000008 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcMaterialLayer> .
+_:g000009 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#isVentilated_IfcMaterialLayer> _:g000010 .
+_:g000009 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#layerThickness_IfcMaterialLayer> _:g000012 .
+_:g000009 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#material_IfcMaterialLayer> _:g000014 .
+_:g000009 <http://www-uk.hpl.hp.com/people/jjc/rdf/c14n#true> "2" .
+_:g000009 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcMaterialLayer> .
+_:g000010 <http://www-uk.hpl.hp.com/people/jjc/rdf/c14n#true> "3" .
+_:g000011 <http://www-uk.hpl.hp.com/people/jjc/rdf/c14n#true> "4" .
+_:g000012 <http://www-uk.hpl.hp.com/people/jjc/rdf/c14n#true> "5" .
+_:g000013 <http://www-uk.hpl.hp.com/people/jjc/rdf/c14n#true> "6" .
+_:g000014 <http://www-uk.hpl.hp.com/people/jjc/rdf/c14n#true> "7" .
+_:g000015 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcMaterialLayer_List> .
+_:g000015 <https://w3id.org/list#hasContents> _:g000009 .
+<http://ipfs/bim/0KksVM8Nr9AhD1xEru1MM2> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#globalId_IfcRoot> _:g000001 .
+<http://ipfs/bim/0KksVM8Nr9AhD1xEru1MM2> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#ownerHistory_IfcRoot> _:g000002 .
+<http://ipfs/bim/0KksVM8Nr9AhD1xEru1MM2> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#relatedObjects_IfcRelAssociates> <http://ipfs/bim/3ykUWRBGb1VO9oLC7kB92p> .
+<http://ipfs/bim/0KksVM8Nr9AhD1xEru1MM2> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#relatingMaterial_IfcRelAssociatesMaterial> _:g000003 .
+<http://ipfs/bim/0KksVM8Nr9AhD1xEru1MM2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcRelAssociatesMaterial> .
+¢

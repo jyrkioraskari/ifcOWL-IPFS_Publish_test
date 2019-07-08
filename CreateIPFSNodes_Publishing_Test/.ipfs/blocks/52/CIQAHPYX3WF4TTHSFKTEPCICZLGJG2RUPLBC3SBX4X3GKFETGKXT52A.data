@@ -1,0 +1,9 @@
+
+’Š_:g000001 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcGloballyUniqueId> .
+_:g000001 <https://w3id.org/express#hasString> "0uFHGoqB1DzuzXji8O_Ek$" .
+<http://ipfs/bim/0uFHGoqB1DzuzXji8O_Ek%24> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#globalId_IfcRoot> _:g000001 .
+<http://ipfs/bim/0uFHGoqB1DzuzXji8O_Ek%24> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#ownerHistory_IfcRoot> _:g000002 .
+<http://ipfs/bim/0uFHGoqB1DzuzXji8O_Ek%24> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#relatedOpeningElement_IfcRelVoidsElement> <http://ipfs/bim/0NjnIySn11IB0TAA2VH8xI> .
+<http://ipfs/bim/0uFHGoqB1DzuzXji8O_Ek%24> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#relatingBuildingElement_IfcRelVoidsElement> <http://ipfs/bim/1KHqag49f2BQG2IsSiUFp0> .
+<http://ipfs/bim/0uFHGoqB1DzuzXji8O_Ek%24> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcRelVoidsElement> .
+Š
