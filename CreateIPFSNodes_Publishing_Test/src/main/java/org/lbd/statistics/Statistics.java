@@ -34,6 +34,8 @@ public class Statistics implements Comparable {
 	
 	long publish_merkle_nodes;
 	long publish_directory_node;
+	
+	long ipfs_node_count;
 
 	
 	public Statistics(String model_name) {
@@ -98,10 +100,6 @@ public class Statistics implements Comparable {
 	}
 
 	
-	
-	
-	
-	
 	public long getIfc_convert() {
 		return ifc_convert;
 	}
@@ -157,8 +155,17 @@ public class Statistics implements Comparable {
 	public void setPublish_directory_node(long publish_directory_node) {
 		this.publish_directory_node = publish_directory_node;
 	}
-
 	
+	public long getIpfs_node_count() {
+		return ipfs_node_count;
+	}
+
+
+	public void setIpfs_node_count(long ipfs_node_count) {
+		this.ipfs_node_count = ipfs_node_count;
+	}
+
+
 	@Override
 	public String toString() {
 		StringBuilder ret=new StringBuilder();
@@ -172,6 +179,7 @@ public class Statistics implements Comparable {
 		ret.append(this.canonization+",");
 		ret.append(this.publish_merkle_nodes+",");
 		ret.append(this.publish_directory_node+",");
+		ret.append(this.ipfs_node_count+",");
 		return ret.toString();
 	}
 

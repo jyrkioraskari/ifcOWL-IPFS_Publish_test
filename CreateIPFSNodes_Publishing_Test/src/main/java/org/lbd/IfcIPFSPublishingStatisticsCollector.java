@@ -101,6 +101,7 @@ public class IfcIPFSPublishingStatisticsCollector extends TestLogger implements 
 		this.current_process.setRewritingtriples(this.total_rewritingtriples_time);
 		this.current_process.setCanonization(this.total_canonization_time);
 		this.current_process.setPublish_merkle_nodes(this.total_publication_time);
+		this.current_process.setIpfs_node_count(this.ipfs_node_count);
 
 		start = System.nanoTime();
 		MerkleNode project_table = publishDirectoryNode2IPFS("IFC Project", jena_guid_directory_model);
@@ -121,6 +122,9 @@ public class IfcIPFSPublishingStatisticsCollector extends TestLogger implements 
 	private long total_rewritingtriples_time = 0l;
 	private long total_publication_time = 0l;
 	private long total_canonization_time = 0l;
+	private long ipfs_node_count = 0l;
+	
+	private long created_guids=0l;
 
 	public void publishEntityNode2IPFS(CurrentRootEntityTripleSet entity_triples) {
 		long start = System.nanoTime();
@@ -171,6 +175,8 @@ public class IfcIPFSPublishingStatisticsCollector extends TestLogger implements 
 		String guid = this.guid_map.get(entity_triples.getURI());
 		if (guid != null)
 			createMerkleNode(guid, entity_model, guid_subject);
+		else 
+			createMerkleNode("created_+"+this.created_guids++, entity_model, guid_subject);
 
 		
 	}
@@ -189,7 +195,12 @@ public class IfcIPFSPublishingStatisticsCollector extends TestLogger implements 
 			List<MerkleNode> node = ipfs.add(file);
 			this.total_publication_time += (System.nanoTime() - start) / 1000000f;
 			if (node.size() == 0)
-				return;
+			{
+				System.out.println("No node created!!!");
+				System.exit(10);
+				//return;
+			}
+			this.ipfs_node_count++;
 
 			// Directory update
 			if (!directory_random_created) {
@@ -253,7 +264,10 @@ public class IfcIPFSPublishingStatisticsCollector extends TestLogger implements 
 			if (f.isFile()) {
 				try {
 					if (f.getAbsolutePath().endsWith(".ifc"))
-						new IfcIPFSPublishingStatisticsCollector(f.getAbsolutePath());
+					{
+						if(f.length()<14055947)  // less than the average size to speed up the process
+						  new IfcIPFSPublishingStatisticsCollector(f.getAbsolutePath());
+					}
 				} catch (InterruptedException | IOException e) {
 					e.printStackTrace();
 				}

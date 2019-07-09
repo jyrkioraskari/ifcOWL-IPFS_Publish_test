@@ -1,9 +1,0 @@
-
-åÝ_:g000001 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcGloballyUniqueId> .
-_:g000001 <https://w3id.org/express#hasString> "15QAvSTJzCZ9CdHFQG6jHf" .
-<http://ipfs/bim/15QAvSTJzCZ9CdHFQG6jHf> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#globalId_IfcRoot> _:g000001 .
-<http://ipfs/bim/15QAvSTJzCZ9CdHFQG6jHf> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#ownerHistory_IfcRoot> _:g000002 .
-<http://ipfs/bim/15QAvSTJzCZ9CdHFQG6jHf> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#relatedObjects_IfcRelAssociates> <http://ipfs/bim/1NCVhm3e17DQUYskR9NgOS> .
-<http://ipfs/bim/15QAvSTJzCZ9CdHFQG6jHf> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#relatingMaterial_IfcRelAssociatesMaterial> _:g000003 .
-<http://ipfs/bim/15QAvSTJzCZ9CdHFQG6jHf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcRelAssociatesMaterial> .
-Ý

@@ -1,14 +1,0 @@
-
-ÞÖ_:g000001 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcGloballyUniqueId> .
-_:g000001 <https://w3id.org/express#hasString> "355zOrp8zDCRqFNl_wKFNL" .
-_:g000003 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#directionSense_IfcMaterialLayerSetUsage> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#POSITIVE> .
-_:g000003 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#forLayerSet_IfcMaterialLayerSetUsage> _:g000004 .
-_:g000003 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#layerSetDirection_IfcMaterialLayerSetUsage> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#AXIS2> .
-_:g000003 <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#offsetFromReferenceLine_IfcMaterialLayerSetUsage> _:g000005 .
-_:g000003 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcMaterialLayerSetUsage> .
-<http://ipfs/bim/355zOrp8zDCRqFNl_wKFNL> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#globalId_IfcRoot> _:g000001 .
-<http://ipfs/bim/355zOrp8zDCRqFNl_wKFNL> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#ownerHistory_IfcRoot> _:g000002 .
-<http://ipfs/bim/355zOrp8zDCRqFNl_wKFNL> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#relatedObjects_IfcRelAssociates> <http://ipfs/bim/0NpqiK%24Nr1Uer1k_ZYtztc> .
-<http://ipfs/bim/355zOrp8zDCRqFNl_wKFNL> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#relatingMaterial_IfcRelAssociatesMaterial> _:g000003 .
-<http://ipfs/bim/355zOrp8zDCRqFNl_wKFNL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcRelAssociatesMaterial> .
-Ö

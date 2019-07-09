@@ -1,9 +1,0 @@
-
-óè_:g000001 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcGloballyUniqueId> .
-_:g000001 <https://w3id.org/express#hasString> "2zys4j_$v5F9Jy5yW7SZ_j" .
-<http://ipfs/bim/2zys4j_%24v5F9Jy5yW7SZ_j> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#globalId_IfcRoot> _:g000001 .
-<http://ipfs/bim/2zys4j_%24v5F9Jy5yW7SZ_j> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#ownerHistory_IfcRoot> _:g000002 .
-<http://ipfs/bim/2zys4j_%24v5F9Jy5yW7SZ_j> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#relatedObjects_IfcRelDefines> <http://ipfs/bim/3RiQcc4gr5rOiSLzXChA0E> .
-<http://ipfs/bim/2zys4j_%24v5F9Jy5yW7SZ_j> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#relatingPropertyDefinition_IfcRelDefinesByProperties> <http://ipfs/bim/2AQPm4mPrEBPFPLHyLrneA> .
-<http://ipfs/bim/2zys4j_%24v5F9Jy5yW7SZ_j> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://standards.buildingsmart.org/IFC/DEV/IFC2x3/TC1/OWL#IfcRelDefinesByProperties> .
-è

@@ -5,7 +5,7 @@
 	<groupId>org.aalto.ifc.ipfs</groupId>
 	<artifactId>ifc_ipfs_create_ipfs_nodes_measure</artifactId>
 	<version>0.0.1</version>
-	<name>IFC-IPFS Create IPFS Nodes Measutre</name>
+	<name>IFC-IPFS Create IPFS Nodes Measure</name>
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
