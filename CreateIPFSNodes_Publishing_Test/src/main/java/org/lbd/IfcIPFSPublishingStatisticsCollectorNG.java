@@ -14,7 +14,6 @@ import org.lbd.ifc.CurrentRootEntityTripleSet;
 import org.lbd.rdf.CanonizedPattern;
 import org.lbd.statistics.Statistics;
 import org.rdfcontext.signing.RDFC14Ner;
-import org.slf4j.Logger;
 
 import com.hp.hpl.jena.rdf.model.Literal;
 import com.hp.hpl.jena.rdf.model.Model;
@@ -29,6 +28,7 @@ import com.hp.hpl.jena.vocabulary.RDF;
 import fi.aalto.lbd.lib.AaltoIPFSConnection;
 import io.ipfs.api.MerkleNode;
 import io.ipfs.api.NamedStreamable;
+import io.ipfs.multihash.Multihash;
 
 /*
 * The GNU Affero General Public License
@@ -49,7 +49,7 @@ import io.ipfs.api.NamedStreamable;
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-public class IfcIPFSPublishingStatisticsCollector extends TestLogger implements IPFSPublisherInterface {
+public class IfcIPFSPublishingStatisticsCollectorNG extends TestLogger implements IPFSPublisherInterface {
 	static List<Statistics> statistics = new ArrayList<>();
 	Statistics current_process;;
 	private final AaltoIPFSConnection ipfs = AaltoIPFSConnection.getInstance();
@@ -62,7 +62,7 @@ public class IfcIPFSPublishingStatisticsCollector extends TestLogger implements 
 	private final CanonizedPattern canonized_pattern = new CanonizedPattern();
 	private final Random random_number_generator = new Random(System.currentTimeMillis());
 
-	private IfcIPFSPublishingStatisticsCollector(String ifcrdf_file) throws InterruptedException, IOException {
+	private IfcIPFSPublishingStatisticsCollectorNG(String ifcrdf_file) throws InterruptedException, IOException {
 		System.setProperty("org.slf4j.simpleLogger.defaultLogLevel", "off");
 
 		System.out.println("IFC file: " + ifcrdf_file);
@@ -77,13 +77,30 @@ public class IfcIPFSPublishingStatisticsCollector extends TestLogger implements 
 			timelog.add(current_process.toString());
 			timelog.stream().forEach(txt -> writeToFile(txt));
 		}
+
+		// Clean database
+		this.jena_guid_directory_model.listStatements().toList().stream()
+				.filter(s -> s.getPredicate().equals(this.jena_property_merkle_node)).map(s -> s.getObject()).forEach(x -> {
+					Multihash filePointer = Multihash.fromBase58(x.asLiteral().getLexicalForm());
+					try {
+						ipfs.getIpfs().pin.rm(filePointer);
+					} catch (Exception e) {
+
+					}
+				});
+		try {
+			ipfs.getIpfs().repo.gc();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 	}
 
 	private void processIfc(String ifc_file) {
 
 		this.current_process.setProcess_start_time(System.nanoTime());
 		long start = System.nanoTime();
-		IfcOWL_Segmenting_Rule10 ifcrdf = new IfcOWL_Segmenting_Rule10(ifc_file, this);
+		IfcOWL_Segmenting_Rule10NG ifcrdf = new IfcOWL_Segmenting_Rule10NG(ifc_file, this);
 
 		System.out.println("model: " + ifcrdf.getModel_size());
 
@@ -127,10 +144,9 @@ public class IfcIPFSPublishingStatisticsCollector extends TestLogger implements 
 
 	public void publishEntityNode2IPFS(CurrentRootEntityTripleSet entity_triples) {
 		String guid = this.guid_map.get(entity_triples.getURI());
-		if(guid==null)
-		{
-			guid="created_+"+this.created_guids++;
-			this.guid_map.put(entity_triples.getURI(),guid);
+		if (guid == null) {
+			guid = "created_+" + this.created_guids++;
+			this.guid_map.put(entity_triples.getURI(), guid);
 		}
 		long start = System.nanoTime();
 		Map<String, Resource> local_resources_map = new HashMap<>();
@@ -178,16 +194,19 @@ public class IfcIPFSPublishingStatisticsCollector extends TestLogger implements 
 		}
 		this.total_rewritingtriples_time += (System.nanoTime() - start) / 1000000f;
 		createMerkleNode(guid, entity_model, guid_subject);
-
 	}
 
 	private boolean directory_random_created = false;
 
 	private void createMerkleNode(String guid, Model model, Resource guid_subject) {
+		if (model.size() == 0)
+			return;
 		try {
 			RDFC14Ner r1 = new RDFC14Ner(model);
 			long start = System.nanoTime();
 			String cleaned = canonized_pattern.clean(r1.getCanonicalString());
+			if (cleaned.length() == 0)
+				return; // When no triples
 			this.total_canonization_time += (System.nanoTime() - start) / 1000000f;
 
 			NamedStreamable.ByteArrayWrapper file = new NamedStreamable.ByteArrayWrapper(guid, cleaned.getBytes());
@@ -264,9 +283,14 @@ public class IfcIPFSPublishingStatisticsCollector extends TestLogger implements 
 				try {
 					if (f.getAbsolutePath().endsWith(".ifc")) {
 						if (f.length() < 14055947) // less than the average size to speed up the process
-							new IfcIPFSPublishingStatisticsCollector(f.getAbsolutePath());
+							new IfcIPFSPublishingStatisticsCollectorNG(f.getAbsolutePath());
 					}
 				} catch (InterruptedException | IOException e) {
+					e.printStackTrace();
+				}
+				try {
+					Thread.sleep(30000);
+				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 			}

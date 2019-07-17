@@ -1,5 +1,6 @@
 package org.lbd;
 
+
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.File;
@@ -10,7 +11,6 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -20,6 +20,7 @@ import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.ResIterator;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
+import org.apache.jena.rdf.model.StmtIterator;
 import org.apache.jena.reasoner.Reasoner;
 import org.apache.jena.reasoner.ReasonerRegistry;
 import org.apache.jena.riot.RDFDataMgr;
@@ -29,6 +30,7 @@ import org.lbd.ifc.CurrentRootEntityTripleSet;
 import org.lbd.ifc.IfcOWLFile;
 
 import be.ugent.IfcSpfReader;
+
 /*
 * The GNU Affero General Public License
 * 
@@ -47,12 +49,13 @@ import be.ugent.IfcSpfReader;
 * You should have received a copy of the GNU Affero General Public License
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
-public class IfcOWL_Segmenting_Rule10 {
+
+public class IfcOWL_Segmenting_Rule10NG {
 	final String ifc_file;
 	final IPFSPublisherInterface caller;
 	long model_size = 0;
 
-	public IfcOWL_Segmenting_Rule10(String ifc_file, IPFSPublisherInterface caller) {
+	public IfcOWL_Segmenting_Rule10NG(String ifc_file, IPFSPublisherInterface caller) {
 		this.ifc_file = ifc_file;
 		this.caller = caller;
 		IfcOWLFile ifcowl = new IfcOWLFile(ifc_file);
@@ -87,6 +90,7 @@ public class IfcOWL_Segmenting_Rule10 {
 			e.printStackTrace();
 		}
 	}
+	String ifcowl = null;
 
 	private Set<String> findRoots(String ifc_file, Model model) {
 		Model model_inference = ModelFactory.createDefaultModel();
@@ -110,7 +114,7 @@ public class IfcOWL_Segmenting_Rule10 {
 				e1.printStackTrace();
 			}
 		}
-		String ifcowl = model.getNsPrefixMap().get("ifcowl");
+		this.ifcowl = model.getNsPrefixMap().get("ifcowl");
 		Resource ifcRoot = inference_model.createResource(ifcowl + "IfcRoot");
 		ResIterator rit = inference_model.listResourcesWithProperty(RDF.type, ifcRoot);
 		final Set<String> roots = new HashSet<>();
@@ -145,6 +149,114 @@ public class IfcOWL_Segmenting_Rule10 {
 		long org_size = model.size();
 		total_count = 0;
 		guid_sets = 0;
+		final Set<String> geometry = new HashSet<>();
+		if (this.ifcowl != null) {
+			Resource ifcProductRepresentation = model.createResource(ifcowl + "IfcProductRepresentation");
+			ResIterator rpt = model.listResourcesWithProperty(RDF.type, ifcProductRepresentation);
+			rpt.forEachRemaining(x -> {
+				geometry.add(x.getURI());
+			});
+			
+			Resource ifcMaterialDefinitionRepresentation = model.createResource(ifcowl + "IfcMaterialDefinitionRepresentation");
+			ResIterator mdr = model.listResourcesWithProperty(RDF.type, ifcMaterialDefinitionRepresentation);
+			mdr.forEachRemaining(x -> {
+				geometry.add(x.getURI());
+			});
+			
+			Resource ifcProductDefinitionShape = model.createResource(ifcowl + "IfcProductDefinitionShape");
+			ResIterator pds = model.listResourcesWithProperty(RDF.type, ifcProductDefinitionShape);
+			pds.forEachRemaining(x -> {
+				geometry.add(x.getURI());
+			});
+			
+
+			Resource ifcRepresentation = model.createResource(ifcowl + "IfcRepresentation");
+			ResIterator rep = model.listResourcesWithProperty(RDF.type, ifcRepresentation);
+			rep.forEachRemaining(x -> {
+				geometry.add(x.getURI());
+			});
+
+			Resource ifcStyleModel = model.createResource(ifcowl + "IfcStyleModel");
+			ResIterator sm = model.listResourcesWithProperty(RDF.type, ifcStyleModel);
+			sm.forEachRemaining(x -> {
+				geometry.add(x.getURI());
+			});
+			
+			Resource ifcShapeRepresentation = model.createResource(ifcowl + "IfcShapeRepresentation");
+			ResIterator sr = model.listResourcesWithProperty(RDF.type, ifcShapeRepresentation);
+			sr.forEachRemaining(x -> {
+				geometry.add(x.getURI());
+			});
+
+			Resource ifcTopologyRepresentation = model.createResource(ifcowl + "IfcTopologyRepresentation");
+			ResIterator tr = model.listResourcesWithProperty(RDF.type, ifcTopologyRepresentation);
+			tr.forEachRemaining(x -> {
+				geometry.add(x.getURI());
+			});
+			
+			Resource ifcGeometricRepresentationItem = model.createResource(ifcowl + "IfcGeometricRepresentationItem");
+			ResIterator gr = model.listResourcesWithProperty(RDF.type, ifcGeometricRepresentationItem);
+			gr.forEachRemaining(x -> {
+				geometry.add(x.getURI());
+			});
+
+			Resource ifcRepresentationContext = model.createResource(ifcowl + "IfcRepresentationContext");
+			ResIterator rc = model.listResourcesWithProperty(RDF.type, ifcRepresentationContext);
+			rc.forEachRemaining(x -> {
+				geometry.add(x.getURI());
+
+			});
+
+			Resource ifcRepresentationMap = model.createResource(ifcowl + "IfcRepresentationMap");
+			ResIterator rmp = model.listResourcesWithProperty(RDF.type, ifcRepresentationMap);
+			rmp.forEachRemaining(x -> {
+				geometry.add(x.getURI());
+			});
+
+			// No inheritance used here
+			Resource ifcObjectPlacement = model.createResource(ifcowl + "IfcObjectPlacement");
+			ResIterator op = model.listResourcesWithProperty(RDF.type, ifcObjectPlacement);
+			op.forEachRemaining(x -> {
+				geometry.add(x.getURI());
+			});
+
+			Resource ifcGridPlacement = model.createResource(ifcowl + "IfcGridPlacement");
+			ResIterator gp = model.listResourcesWithProperty(RDF.type, ifcGridPlacement);
+			gp.forEachRemaining(x -> {
+				geometry.add(x.getURI());
+			});
+			
+			Resource ifcLocalPlacement = model.createResource(ifcowl + "IfcLocalPlacement");
+			ResIterator lp = model.listResourcesWithProperty(RDF.type, ifcLocalPlacement);
+			lp.forEachRemaining(x -> {
+				geometry.add(x.getURI());
+			});
+			
+			Resource ifcSurfaceStyleShading = model.createResource(ifcowl + "IfcSurfaceStyleShading");
+			ResIterator sss = model.listResourcesWithProperty(RDF.type, ifcSurfaceStyleShading);
+			sss.forEachRemaining(x -> {
+				geometry.add(x.getURI());
+			});
+
+			Resource ifcPresentationStyleAssignment = model.createResource(ifcowl + "IfcPresentationStyleAssignment");
+			ResIterator psa = model.listResourcesWithProperty(RDF.type, ifcPresentationStyleAssignment);
+			psa.forEachRemaining(x -> {
+				geometry.add(x.getURI());
+
+			});
+
+			Resource ifcPresentationLayerAssignment = model.createResource(ifcowl + "IfcPresentationLayerAssignment");
+			ResIterator pla = model.listResourcesWithProperty(RDF.type, ifcPresentationLayerAssignment);
+			pla.forEachRemaining(x -> {
+				geometry.add(x.getURI());
+			});
+
+		} else {
+			System.err.println("No ifowl");
+			System.exit(10);
+		}
+	
+		
 
 		final Set<Statement> current_root_entity_triples = new HashSet<>();
 		final Set<Statement> processed = new HashSet<>();
@@ -153,43 +265,56 @@ public class IfcOWL_Segmenting_Rule10 {
 		final Set<String> shared = new HashSet<>();
 		roots.stream().forEach(x -> {
 			current_root_entity = new CurrentRootEntityTripleSet();
-			pre_traverse(x, model, current_root_entity_triples, processed, roots, shared);
+			pre_traverse(x, model, current_root_entity_triples, processed, roots, shared,geometry);
 			current_root_entity_triples.clear();
 		});
 
 		Set<Resource> unreferenced = new HashSet<>();
 		unreferenced.addAll(getlistOfNonGUIDSubjectsNotReferenced(model, roots));
-		shared.stream().forEach(x -> roots.add(x)); // 10
-		shared.clear();
+		//shared.stream().forEach(x -> roots.add(x)); // 10
+		//shared.clear();
 
 		unreferenced.stream().forEach(x -> {
 			current_root_entity = new CurrentRootEntityTripleSet();
-			pre_traverse(x.getURI(), model, current_root_entity_triples, processed, roots, shared);
+			pre_traverse(x.getURI(), model, current_root_entity_triples, processed, roots, shared,geometry);
 			current_root_entity_triples.clear();
 		});
 
 		processed.clear();
-		shared.stream().forEach(x -> roots.add(x)); // 10
-		shared.clear();
+		//shared.stream().forEach(x -> roots.add(x)); // 10
+		//shared.clear();
 
 		unreferenced.stream().forEach(x -> {
 			current_root_entity = new CurrentRootEntityTripleSet();
 			guid_sets++;
-			traverse(x.getURI(), model, current_root_entity_triples, processed, roots);
+			boolean ret=traverse(x.getURI(), model, current_root_entity_triples, processed, roots, shared, geometry);
 			current_root_entity.setURI(x.getURI());
 			current_root_entity.addTriples(current_root_entity_triples);
-			this.caller.publishEntityNode2IPFS(current_root_entity);
+			if(ret==false)
+			  this.caller.publishEntityNode2IPFS(current_root_entity);
 			current_root_entity_triples.clear();
 		});
 		unreferenced.clear();
-
+		
+		// No roots are filtered
 		roots.stream().forEach(x -> {
 			current_root_entity = new CurrentRootEntityTripleSet();
 			guid_sets++;
-			traverse(x, model, current_root_entity_triples, processed, roots);
+			boolean ret=traverse(x, model, current_root_entity_triples, processed, roots, shared, geometry);
+			current_root_entity.setURI(x);
+			current_root_entity.addTriples(current_root_entity_triples);			
+			this.caller.publishEntityNode2IPFS(current_root_entity);
+			current_root_entity_triples.clear();
+		});
+		
+		shared.stream().forEach(x -> {
+			current_root_entity = new CurrentRootEntityTripleSet();
+			guid_sets++;
+			boolean ret=traverse(x, model, current_root_entity_triples, processed, roots, shared, geometry);
 			current_root_entity.setURI(x);
 			current_root_entity.addTriples(current_root_entity_triples);
-			this.caller.publishEntityNode2IPFS(current_root_entity);
+			if(ret==false)
+			  this.caller.publishEntityNode2IPFS(current_root_entity);
 			current_root_entity_triples.clear();
 		});
 
@@ -197,20 +322,20 @@ public class IfcOWL_Segmenting_Rule10 {
 	}
 
 	private void pre_traverse(String r, Model model, final Set<Statement> current_root_entity_triples,
-			Set<Statement> processed, Set<String> roots, Set<String> shared) {
+			Set<Statement> processed, Set<String> roots, Set<String> shared, Set<String> geometry) {
 		Resource rm = model.getResource(r); // The same without inferencing
 		rm.listProperties().forEachRemaining(x -> {
 
-			if (!processed.add(x)) {
-				shared.add(x.getSubject().getURI());
+			if (!processed.add(x) && !geometry.contains(x.getSubject().getURI())) {  // the comparison takes time
+				  shared.add(x.getSubject().getURI());
 				return; // only first!
 			}
-
+			
 			if (current_root_entity_triples.add(x)) {
-				if (x.getObject().isResource()) {
+				if (x.getObject().isResource()&& !geometry.contains(x.getObject().asResource().getURI())&& !shared.contains(x.getObject().asResource().getURI()))  {
 					if (!roots.contains(x.getObject().asResource().getURI()))
 						pre_traverse(x.getObject().asResource().getURI(), model, current_root_entity_triples, processed,
-								roots, shared);
+								roots, shared,geometry);
 				}
 
 			}
@@ -219,23 +344,40 @@ public class IfcOWL_Segmenting_Rule10 {
 	}
 
 	private int total_count = 0;
-
-	private void traverse(String r, Model model, final Set<Statement> current_root_entity_triples,
-			Set<Statement> processed, Set<String> roots) {
+	private boolean traverse(String r, Model model, final Set<Statement> current_root_entity_triples,
+			Set<Statement> processed, Set<String> roots,  Set<String> shared, Set<String> geometry) {
+		if(geometry.contains(r))  // Could be shared
+				return true;
+		
 		Resource rm = model.getResource(r); // The same without inferencing
-		rm.listProperties().forEachRemaining(x -> {
-			processed.add(x);
+		
+		StmtIterator iterator=rm.listProperties();
+		while(iterator.hasNext())
+		{
+			Statement x=iterator.next();
+			if (x.getPredicate().toString().endsWith("#ownerHistory_IfcRoot"))
+				continue;
+			if(x.getObject().isResource()&&geometry.contains(x.getObject().asResource().getURI()))
+				return true;
+			if(x.getObject().isResource()&&shared.contains(x.getObject().asResource().getURI()))
+				return true;
+			Resource IfcCartesianPoint = model.createResource(this.ifcowl + "IfcCartesianPoint");
+			if(x.getPredicate().equals(RDF.type))
+			  if(x.getObject()==IfcCartesianPoint)
+				  return true;
+
 			if (current_root_entity_triples.add(x)) {
 				this.total_count += 1;
 				if (x.getObject().isResource()) {
 					if (!roots.contains(x.getObject().asResource().getURI()))
 						traverse(x.getObject().asResource().getURI(), model, current_root_entity_triples, processed,
-								roots);
+								roots, shared,geometry);
 				}
 
 			}
-		});
-
+		
+		}
+        return false;
 	}
 
 	private static String getExpressSchema(String ifcFile) {

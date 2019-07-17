@@ -19,6 +19,8 @@ import be.ugent.IfcSpfReader;
 public class CanonizedPattern {
 
 	public String clean(String cline) {
+		if(cline==null || cline.length()==0)
+			return "";
 		// Converts C14 into N3
 		String output_format = cline;//.replaceAll("\\[", "").replaceAll("\\]", " \n");
 		output_format=intoLines(output_format);
@@ -47,7 +49,7 @@ public class CanonizedPattern {
 			} catch (Exception e) {
 				System.err.println("Bad: pattern: " + s.trim());
 				System.err.println("list was" + list);
-				System.out.println("cline vas:\n"+cline);
+				System.out.println("cline was:\n"+cline);
 				e.printStackTrace();
 				System.exit(1);
 			}
