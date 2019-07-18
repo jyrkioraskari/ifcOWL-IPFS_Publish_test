@@ -29,6 +29,7 @@ import com.hp.hpl.jena.vocabulary.RDF;
 import fi.aalto.lbd.lib.AaltoIPFSConnection;
 import io.ipfs.api.MerkleNode;
 import io.ipfs.api.NamedStreamable;
+import io.ipfs.multihash.Multihash;
 
 /*
 * The GNU Affero General Public License
@@ -76,6 +77,23 @@ public class IfcIPFSPublishingStatisticsCollector extends TestLogger implements 
 		if (current_process.getIfcowl_triples() > 0) {
 			timelog.add(current_process.toString());
 			timelog.stream().forEach(txt -> writeToFile(txt));
+		}
+
+		// Clean database
+		this.jena_guid_directory_model.listStatements().toList().stream()
+				.filter(s -> s.getPredicate().equals(this.jena_property_merkle_node)).map(s -> s.getObject())
+				.forEach(x -> {
+					Multihash filePointer = Multihash.fromBase58(x.asLiteral().getLexicalForm());
+					try {
+						ipfs.getIpfs().pin.rm(filePointer);
+					} catch (Exception e) {
+
+					}
+				});
+		try {
+			ipfs.getIpfs().repo.gc();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -127,10 +145,9 @@ public class IfcIPFSPublishingStatisticsCollector extends TestLogger implements 
 
 	public void publishEntityNode2IPFS(CurrentRootEntityTripleSet entity_triples) {
 		String guid = this.guid_map.get(entity_triples.getURI());
-		if(guid==null)
-		{
-			guid="created_+"+this.created_guids++;
-			this.guid_map.put(entity_triples.getURI(),guid);
+		if (guid == null) {
+			guid = "created_+" + this.created_guids++;
+			this.guid_map.put(entity_triples.getURI(), guid);
 		}
 		long start = System.nanoTime();
 		Map<String, Resource> local_resources_map = new HashMap<>();
@@ -267,6 +284,11 @@ public class IfcIPFSPublishingStatisticsCollector extends TestLogger implements 
 							new IfcIPFSPublishingStatisticsCollector(f.getAbsolutePath());
 					}
 				} catch (InterruptedException | IOException e) {
+					e.printStackTrace();
+				}
+				try {
+					Thread.sleep(30000);
+				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 			}
