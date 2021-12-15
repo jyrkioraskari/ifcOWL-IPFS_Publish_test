@@ -59,6 +59,7 @@ import com.google.common.eventbus.EventBus;
 
 import fi.ni.rdf.Namespace;
 
+
 public class RDFWriter {
     private final EventBus eventBus = EventBusService.getEventBus();
     // input variables
