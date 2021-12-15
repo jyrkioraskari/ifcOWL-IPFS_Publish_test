@@ -1,6 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.rwth.ifc.ipfs</groupId>
 	<artifactId>ifc_ipfs_create_ipfs_nodes_measure</artifactId>
@@ -10,12 +8,12 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
-	
+
 	<repositories>
 		<repository>
 			<id>jitpack.io</id>
 			<url>https://jitpack.io</url>
-		</repository>	
+		</repository>
 	</repositories>
 	<dependencies>
 		<dependency>
@@ -37,7 +35,7 @@
 			<artifactId>log4j-api</artifactId>
 			<version>2.16.0</version>
 		</dependency>
-				
+
 
 		<!-- https://mvnrepository.com/artifact/com.hp.hpl.jena/jena -->
 		<dependency>
@@ -49,15 +47,14 @@
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>23.0</version>
+			<version>[30.0-jre,)</version>
 		</dependency>
-
 		<dependency>
 			<groupId>com.github.pipauwel</groupId>
 			<artifactId>ifcParserLib</artifactId>
 			<version>0.2</version>
 		</dependency>
-				<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-compress -->
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-compress -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-compress</artifactId>
